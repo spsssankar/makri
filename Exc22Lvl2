@@ -1,0 +1,31 @@
+'''
+Created on Jun 29, 2019
+
+@author: BlaZiKeN
+'''
+#PF-Exer-22
+
+def generate_ticket(airline,source,destination,no_of_passengers):
+    ticket_number_list=[]
+    #Write your logic here
+    i=0
+    passengers=101
+    while(i<no_of_passengers):
+        ticket=""
+        ticket+=airline
+        ticket+=":"
+        ticket+=source[0:3]
+        ticket+=":"
+        ticket+=destination[0:3]
+        ticket+=":"
+        ticket+=str(passengers)
+        passengers+=1
+        ticket_number_list.append(ticket)
+        i+=1
+    if(no_of_passengers>5):
+        ticket_number_list=ticket_number_list[-5:]
+    #Use the below return statement wherever applicable
+    return ticket_number_list
+
+#Provide different values for airline,source,destination,no_of_passengers and test your program
+print(generate_ticket("AI","Bangalore","London",7))
