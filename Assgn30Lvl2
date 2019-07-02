@@ -1,0 +1,26 @@
+#PF-Assgn-30
+
+def encode(message):
+    en_message=""
+    l=0
+    count=1
+    m=message[l]
+    #Remove pass and write your logic here
+    while(l<len(message)-1):
+        if(m==message[l+1]):
+            count+=1
+            l+=1
+            continue
+        en_message=en_message+str(count)
+        en_message=en_message+m
+        count=1
+        l+=1
+        m=message[l]
+    
+    en_message=en_message+str(count)
+    en_message=en_message+m
+    return en_message
+
+#Provide different values for message and test your program
+encoded_message=encode("AABCCA")
+print(encoded_message)
