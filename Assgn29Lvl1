@@ -1,0 +1,21 @@
+#PF-Assgn-29
+def calculate(distance,no_of_passengers):
+    
+    #Remove pass and write your logic here
+    no_of_litre=distance/mileage
+    cost=price_per_litre*no_of_litre
+    returns=no_of_passengers*ticket_fare
+    gl=returns-cost
+    if(gl>=0):
+        return gl
+    else:
+        return -1
+
+
+#Provide different values for distance, no_of_passenger and test your program
+distance=100
+no_of_passengers=10
+mileage=10
+price_per_litre=70
+ticket_fare=80
+print(calculate(distance,no_of_passengers))
