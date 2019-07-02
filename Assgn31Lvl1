@@ -1,0 +1,19 @@
+#PF-Assgn-31
+def check_palindrome(word):
+    l=len(word)
+    nl=-l
+    c=-1
+    rev=""
+    #Remove pass and write your logic here
+    while(c>=nl):
+        rev=rev+word[c]
+        c-=1
+    if(rev==word):
+        return 1
+    else:
+        return 0
+status=check_palindrome("wow")
+if(status):
+    print("word is palindrome")
+else:
+    print("word is not palindrome")
