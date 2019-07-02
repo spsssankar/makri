@@ -1,0 +1,28 @@
+#PF-Assgn-33
+
+def find_common_characters(msg1,msg2):
+    com=""
+    for i in range(0,len(msg1)):
+        k=0
+        present=0
+        while(k<len(com)):
+            if(msg1[i]==com[k]):
+                present=1
+                break
+            k+=1
+        if(present==1):
+            continue
+        for j in range(0,len(msg2)):
+            if(msg1[i]==msg2[j]):
+                com=com+msg1[i]
+                break
+    if(len(com)==0):
+        return -1
+    else:
+        return com
+
+#Provide different values for msg1,msg2 and test your program
+msg1="I like Python"
+msg2="Java is a very popular language"
+common_characters=find_common_characters(msg1,msg2)
+print(common_characters)
