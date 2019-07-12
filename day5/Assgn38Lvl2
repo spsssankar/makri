@@ -1,0 +1,28 @@
+#PF-Assgn-38
+
+def check_double(number):
+    list_of_digits=[]
+    temp = number
+    double_number=number*2
+    count1=0
+    count2=0
+    flag=0
+    while temp>0:
+        digit=temp%10
+        list_of_digits.append(digit)
+        temp=int(temp/10)
+        count1+=1
+    while double_number>0:
+        digit=double_number%10
+        if digit not in list_of_digits:
+            flag=1
+            break
+        double_number=int(double_number/10)
+        count2+=1
+    if count1==count2 and flag==0:
+        return True
+    else:
+        return False
+
+#Provide different values for number and test your program
+print(check_double(65874))
