@@ -1,0 +1,20 @@
+#PF-Assgn-43
+Write a python function find_smallest_number() which accepts a number n and returns the smallest number having n divisors.
+Handle the possible errors in the code written inside the function.
+
+16 ==> 120
+
+def find_smallest_number(num):
+    for n in range(4,1000):
+        c=2
+        limit=int(n/2)+1
+        for j in range(2,limit):
+            if n%j==0:
+                c+=1
+        if c==num:
+            return n
+
+num=16
+print("The number of divisors :",num)
+result=find_smallest_number(num)
+print("The smallest number having",num," divisors:",result)
