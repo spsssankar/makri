@@ -1,0 +1,17 @@
+#PF-Exer-34
+import math
+def find_number_of_combination(number_of_flavours):
+    total_combination=1
+    temp=number_of_flavours
+    #write your logic here
+    while(temp>0):
+        div=math.factorial(number_of_flavours-temp)*math.factorial(temp)
+        sum=math.factorial(number_of_flavours)/div
+        total_combination+=sum
+        temp-=1
+    return total_combination
+
+
+#Provide different values for number_of_flavours and test your program
+number_of_combination=find_number_of_combination(4)
+print(number_of_combination)
