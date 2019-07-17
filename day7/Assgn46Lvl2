@@ -1,0 +1,30 @@
+#PF-Assgn-46
+
+'''Write a python function, nearest_palindrome() which accepts a number and returns the nearest palindrome greater than the given number. 
+Also write the pytest test cases to test the program.
+
+
+Sample Input	Expected Output
+12300	12321
+12331	12421
+'''
+
+def nearest_palindrome(number):
+    #start writitng your code here
+    flag=0  
+    number+=1 
+    while flag==0:
+        temp=number
+        rev=0
+        while temp>0:
+            rem=temp%10 
+            rev=rev*10+rem
+            temp=int(temp/10)
+        if rev==number:
+            return number
+        else:
+            number+=1 
+    
+
+number=12300
+print(nearest_palindrome(number))
