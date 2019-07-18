@@ -1,0 +1,28 @@
+#PF-Assgn-50
+
+def sms_encoding(data):
+    encoded_data=''
+    split_data=data.split(" ")
+    for word in split_data:
+        i=0 
+        vowel=""
+        consonent=""
+        flag=0
+        while i<len(word):
+            if word[i].lower() in ['a','e','i','o','u']:
+                vowel+=word[i]
+            else:
+                flag=1
+                while(i<len(word)):
+                    if word[i].lower() not in ['a','e','i','o','u']:
+                        consonent+=word[i]
+                    i+=1
+                encoded_data=encoded_data+consonent+" "
+                break
+            i+=1
+        if flag==0:
+            encoded_data=encoded_data+vowel+" "
+    encoded_data=encoded_data[0:len(encoded_data)-1]
+    return encoded_data
+data="I love Python"
+print(sms_encoding(data))
